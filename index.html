@@ -350,6 +350,38 @@
       color:#666;
       font-size:14px;
     }
+
+    .faq{
+  margin-top:90px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.faq-item{
+  background:#111;
+  border:1px solid #222;
+  border-radius:22px;
+  padding:24px;
+  transition:0.25s ease;
+}
+
+.faq-item:hover{
+  border-color:#333;
+  transform:translateY(-3px);
+}
+
+.faq-item h3{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.faq-item p{
+  color:#9f9f9f;
+  font-size:15px;
+  line-height:1.7;
+}
+    
     .section{
       margin-top:100px;
     }
@@ -632,6 +664,58 @@
 
     </section>
 
+    <!-- FAQ -->
+
+<section class="section">
+
+  <div class="section-header">
+    <h2>Häufige Fragen</h2>
+
+    <p>
+      Antworten auf die wichtigsten Fragen rund um unser AI Content System.
+    </p>
+  </div>
+
+  <div class="faq">
+
+    <div class="faq-item">
+      <h3>Wie funktioniert das System?</h3>
+
+      <p>
+        Wir nehmen bestehende Videos oder Inhalte und verwandeln sie automatisch
+        in LinkedIn Posts, Reels, Newsletter und weiteren Content.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Für wen ist das geeignet?</h3>
+
+      <p>
+        Für Creator, Coaches, Agenturen, Personal Brands und Unternehmen,
+        die regelmäßig Content veröffentlichen möchten.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wie schnell kann gestartet werden?</h3>
+
+      <p>
+        In der Regel innerhalb weniger Tage nach dem Erstgespräch.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Benötige ich technisches Wissen?</h3>
+
+      <p>
+        Nein. Wir übernehmen die komplette Einrichtung und Automatisierung.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+    
     <footer>
 
   <div>
@@ -718,8 +802,7 @@
 </section>
 <script>
 
-const cards = document.querySelectorAll('.stat, .card, .feature-item, .mini-card, .testimonial');
-
+const cards = document.querySelectorAll('.stat, .card, .feature-item, .mini-card, .testimonial, .faq-item');
 const observer = new IntersectionObserver(entries => {
 
   entries.forEach(entry => {
