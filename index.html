@@ -17,6 +17,10 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Inter',sans-serif;
       background:#0a0a0a;
@@ -39,7 +43,7 @@
     .container{
       max-width:1250px;
       margin:auto;
-      padding:70px 24px;
+      padding:100px 24px 70px;
     }
 
     .badge{
@@ -105,13 +109,19 @@
     }
 
     .button-primary:hover{
-      transform:translateY(-2px);
+      transform:translateY(-3px);
     }
 
     .button-secondary{
       border:1px solid #2a2a2a;
       background:#111;
       color:white;
+    }
+
+    .hero-trust{
+      margin-top:20px;
+      color:#666;
+      font-size:14px;
     }
 
     .stats-row{
@@ -127,6 +137,12 @@
       padding:28px;
       border-radius:22px;
       backdrop-filter:blur(10px);
+      transition:0.25s ease;
+    }
+
+    .stat:hover{
+      transform:translateY(-4px);
+      border-color:#333;
     }
 
     .stat h3{
@@ -153,6 +169,12 @@
       border-radius:28px;
       overflow:hidden;
       box-shadow:0 0 60px rgba(255,255,255,0.03);
+      transition:0.25s ease;
+    }
+
+    .video-wrapper:hover{
+      transform:translateY(-4px);
+      border-color:#333;
     }
 
     .video-top{
@@ -189,6 +211,12 @@
       padding:38px;
       height:100%;
       box-shadow:0 0 60px rgba(255,255,255,0.03);
+      transition:0.25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#333;
     }
 
     .card h2{
@@ -218,6 +246,12 @@
       border:1px solid #1f1f1f;
       padding:18px;
       border-radius:18px;
+      transition:0.25s ease;
+    }
+
+    .feature-item:hover{
+      transform:translateY(-3px);
+      border-color:#333;
     }
 
     .feature-icon{
@@ -245,8 +279,14 @@
     .mini-card{
       background:#0d0d0d;
       border:1px solid #1f1f1f;
-      padding:20px;
+      padding:22px;
       border-radius:18px;
+      transition:0.25s ease;
+    }
+
+    .mini-card:hover{
+      transform:translateY(-4px);
+      border-color:#333;
     }
 
     .mini-card h3{
@@ -259,8 +299,42 @@
       font-size:14px;
     }
 
+    .section{
+      margin-top:120px;
+    }
+
+    .section-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-header h2{
+      font-size:52px;
+      margin-bottom:18px;
+    }
+
+    .section-header p{
+      max-width:700px;
+      margin:auto;
+      color:#9f9f9f;
+      font-size:18px;
+    }
+
+    .three-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+
+    .faq-grid{
+      display:grid;
+      gap:18px;
+      max-width:900px;
+      margin:auto;
+    }
+
     .bottom-cta{
-      margin-top:110px;
+      margin-top:120px;
       text-align:center;
       background:#111;
       border:1px solid #222;
@@ -288,6 +362,9 @@
       padding:45px 20px;
       margin-top:80px;
       border-top:1px solid #1c1c1c;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
     @media(max-width:980px){
@@ -304,7 +381,8 @@
         grid-template-columns:1fr;
       }
 
-      .bottom-cta h2{
+      .bottom-cta h2,
+      .section-header h2{
         font-size:38px;
       }
 
@@ -312,6 +390,7 @@
 
   </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -324,24 +403,27 @@
   <div class="hero-text">
 
     <h1>
-      Wir verwandeln eure Inhalte automatisch in Kunden-Content.
+      Aus einem Video entstehen automatisch LinkedIn Posts, Reels & Newsletter.
     </h1>
 
     <p>
-      Aus einem einzigen Video erstellen wir LinkedIn-Posts,
-      Newsletter, Reels und viralen Shortform-Content — komplett automatisiert.
+      Wir verwandeln bestehende Inhalte automatisch in performanten Multi-Platform Content — komplett durch KI automatisiert.
     </p>
 
     <div class="hero-buttons">
 
       <a href="mailto:alex.media.automations@proton.me?subject=Projektanfrage" class="button button-primary">
-        Projekt anfragen
+        Kostenlose Demo anfragen
       </a>
 
       <a href="#demo" class="button button-secondary">
         Demo ansehen
       </a>
 
+    </div>
+
+    <div class="hero-trust">
+      Für Creator, Brands & moderne Unternehmen
     </div>
 
   </div>
@@ -370,7 +452,7 @@
     <div class="video-wrapper">
 
       <div class="video-top">
-        <span>AMA • Demo Workflow</span>
+        <span>AMA • AI Workflow Demo</span>
 
         <div class="video-dots">
           <span></span>
@@ -438,29 +520,32 @@
 
     </div>
 
-    <section style="margin-top:110px;">
+  </div>
 
-    <div style="text-align:center; margin-bottom:60px;">
-      <h2 style="font-size:52px; margin-bottom:18px;">So funktioniert es</h2>
-      <p style="max-width:700px; margin:auto; color:#9f9f9f; font-size:18px;">
+  <section class="section">
+
+    <div class="section-header">
+      <h2>So funktioniert es</h2>
+
+      <p>
         Unser Workflow verwandelt bestehende Videos automatisch in performanten Multi-Platform Content.
       </p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px;">
+    <div class="three-grid">
 
-      <div class="mini-card" style="padding:32px;">
-        <h3 style="font-size:22px; margin-bottom:14px;">1. Video hochladen</h3>
+      <div class="mini-card">
+        <h3>1. Video hochladen</h3>
         <p>Eure bestehenden Inhalte werden automatisch analysiert und verarbeitet.</p>
       </div>
 
-      <div class="mini-card" style="padding:32px;">
-        <h3 style="font-size:22px; margin-bottom:14px;">2. KI verarbeitet Content</h3>
+      <div class="mini-card">
+        <h3>2. KI verarbeitet Content</h3>
         <p>Unsere Systeme generieren Posts, Hooks, Newsletter und Kurzvideos.</p>
       </div>
 
-      <div class="mini-card" style="padding:32px;">
-        <h3 style="font-size:22px; margin-bottom:14px;">3. Content automatisch erhalten</h3>
+      <div class="mini-card">
+        <h3>3. Content automatisch erhalten</h3>
         <p>Ihr bekommt fertigen Multi-Channel Content ohne manuellen Aufwand.</p>
       </div>
 
@@ -468,33 +553,43 @@
 
   </section>
 
-  <section style="margin-top:120px;">
+  <section class="section">
 
-    <div style="text-align:center; margin-bottom:60px;">
-      <h2 style="font-size:52px; margin-bottom:18px;">Beispiel Ergebnisse</h2>
-      <p style="max-width:700px; margin:auto; color:#9f9f9f; font-size:18px;">
+    <div class="section-header">
+      <h2>Beispiel Ergebnisse</h2>
+
+      <p>
         Ein einziges Video wird automatisch in mehrere hochwertige Formate umgewandelt.
       </p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px;">
+    <div class="three-grid">
 
-      <div class="mini-card" style="padding:28px;">
-        <div style="font-size:13px; color:#777; margin-bottom:14px;">LINKEDIN POST</div>
+      <div class="mini-card">
+        <div style="font-size:13px; color:#777; margin-bottom:14px;">
+          LINKEDIN POST
+        </div>
+
         <p style="color:#e5e5e5; font-size:16px; line-height:1.7;">
-          "Die meisten Unternehmen verschwenden ihren Content, weil sie nur EIN Format nutzen."
+          „Die meisten Unternehmen verschwenden ihren Content, weil sie nur EIN Format nutzen.“
         </p>
       </div>
 
-      <div class="mini-card" style="padding:28px;">
-        <div style="font-size:13px; color:#777; margin-bottom:14px;">NEWSLETTER</div>
+      <div class="mini-card">
+        <div style="font-size:13px; color:#777; margin-bottom:14px;">
+          NEWSLETTER
+        </div>
+
         <p style="color:#e5e5e5; font-size:16px; line-height:1.7;">
           Automatisch generierte Newsletter aus bestehenden Video-Inhalten.
         </p>
       </div>
 
-      <div class="mini-card" style="padding:28px;">
-        <div style="font-size:13px; color:#777; margin-bottom:14px;">SHORTFORM CONTENT</div>
+      <div class="mini-card">
+        <div style="font-size:13px; color:#777; margin-bottom:14px;">
+          SHORTFORM CONTENT
+        </div>
+
         <p style="color:#e5e5e5; font-size:16px; line-height:1.7;">
           Reels, Shorts & TikToks mit Hooks, Untertiteln und schnellen Schnitten.
         </p>
@@ -504,26 +599,26 @@
 
   </section>
 
-  <section style="margin-top:120px;">
+  <section class="section">
 
-    <div style="text-align:center; margin-bottom:50px;">
-      <h2 style="font-size:52px; margin-bottom:18px;">Häufige Fragen</h2>
+    <div class="section-header">
+      <h2>Häufige Fragen</h2>
     </div>
 
-    <div style="display:grid; gap:18px; max-width:900px; margin:auto;">
+    <div class="faq-grid">
 
-      <div class="mini-card" style="padding:28px;">
-        <h3 style="margin-bottom:10px;">Für wen ist das geeignet?</h3>
+      <div class="mini-card">
+        <h3>Für wen ist das geeignet?</h3>
         <p>Für Brands, Creator, Coaches und Unternehmen mit bestehendem Video-Content.</p>
       </div>
 
-      <div class="mini-card" style="padding:28px;">
-        <h3 style="margin-bottom:10px;">Welche Inhalte werden erstellt?</h3>
+      <div class="mini-card">
+        <h3>Welche Inhalte werden erstellt?</h3>
         <p>LinkedIn Posts, Newsletter, Reels, TikToks und weiterer Shortform Content.</p>
       </div>
 
-      <div class="mini-card" style="padding:28px;">
-        <h3 style="margin-bottom:10px;">Wie schnell geht die Verarbeitung?</h3>
+      <div class="mini-card">
+        <h3>Wie schnell geht die Verarbeitung?</h3>
         <p>Je nach Workflow können Inhalte innerhalb weniger Minuten erstellt werden.</p>
       </div>
 
@@ -543,7 +638,7 @@
     </p>
 
     <a href="mailto:alex.media.automations@proton.me?subject=Projektanfrage" class="button button-primary">
-      Jetzt kontaktieren
+      Kostenlose Demo anfragen
     </a>
 
   </div>
@@ -551,7 +646,19 @@
 </div>
 
 <footer>
-  © 2026 AMA • Alex Media Automations
+
+  <div>
+    © 2026 AMA • Alex Media Automations
+  </div>
+
+  <div>
+    alex.media.automations@proton.me
+  </div>
+
+  <div>
+    Made in Germany
+  </div>
+
 </footer>
 
 </body>
