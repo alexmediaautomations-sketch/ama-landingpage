@@ -1,3 +1,6 @@
+# AMA • Premium Landingpage Upgrade
+
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -5,157 +8,379 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMA • Alex Media Automations</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
 
-    body{
+    *{
       margin:0;
-      font-family:Arial,sans-serif;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
       background:#0a0a0a;
       color:white;
       line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 30%);
+      pointer-events:none;
+      z-index:-1;
     }
 
     .container{
-      max-width:1200px;
+      max-width:1250px;
       margin:auto;
-      padding:60px 20px;
+      padding:70px 24px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#111;
+      border:1px solid #222;
+      padding:10px 18px;
+      border-radius:999px;
+      color:#bdbdbd;
+      font-size:14px;
+      margin-bottom:28px;
+    }
+
+    .badge-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#00ff88;
+      box-shadow:0 0 15px #00ff88;
     }
 
     h1{
-      font-size:64px;
-      line-height:1.1;
-      margin-bottom:20px;
-      max-width:900px;
+      font-size:72px;
+      line-height:1;
+      max-width:950px;
+      font-weight:800;
+      letter-spacing:-2px;
+      margin-bottom:28px;
     }
 
-    h2{
-      font-size:36px;
-      margin-bottom:20px;
+    .hero-text{
+      max-width:760px;
     }
 
-    p{
-      color:#b3b3b3;
-      font-size:18px;
-      max-width:700px;
+    .hero-text p{
+      color:#a7a7a7;
+      font-size:20px;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
     }
 
     .button{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 28px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.25s ease;
+    }
+
+    .button-primary{
       background:white;
       color:black;
-      padding:15px 25px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:bold;
-      margin-top:20px;
+    }
+
+    .button-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .button-secondary{
+      border:1px solid #2a2a2a;
+      background:#111;
+      color:white;
+    }
+
+    .stats-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:60px;
+    }
+
+    .stat{
+      background:#111;
+      border:1px solid #222;
+      padding:28px;
+      border-radius:22px;
+      backdrop-filter:blur(10px);
+    }
+
+    .stat h3{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .stat p{
+      color:#999;
+      font-size:15px;
     }
 
     .content-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:stretch;
-      margin-top:80px;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:35px;
+      margin-top:90px;
+      align-items:start;
     }
 
-    .video-section{
-      height:100%;
-    }
-
-    .video-section video{
-      width:100%;
-      border-radius:24px;
+    .video-wrapper{
+      background:#101010;
       border:1px solid #222;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 0 60px rgba(255,255,255,0.03);
+    }
+
+    .video-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 22px;
+      border-bottom:1px solid #1f1f1f;
+      color:#b3b3b3;
+      font-size:14px;
+    }
+
+    .video-dots{
+      display:flex;
+      gap:8px;
+    }
+
+    .video-dots span{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#333;
+    }
+
+    video{
+      width:100%;
       display:block;
     }
 
     .card{
-      background:#151515;
-      padding:35px;
-      border-radius:24px;
+      background:#111;
       border:1px solid #222;
+      border-radius:28px;
+      padding:38px;
       height:100%;
-      box-sizing:border-box;
+      box-shadow:0 0 60px rgba(255,255,255,0.03);
     }
 
-    .card ul{
-      padding-left:20px;
+    .card h2{
+      font-size:40px;
+      margin-bottom:18px;
+      line-height:1.1;
+    }
+
+    .card-subtext{
+      color:#9d9d9d;
+      margin-bottom:30px;
+      font-size:17px;
+    }
+
+    .feature-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
       margin-bottom:40px;
     }
 
-    .card li{
-      margin-bottom:10px;
-      color:#ddd;
+    .feature-item{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      background:#0d0d0d;
+      border:1px solid #1f1f1f;
+      padding:18px;
+      border-radius:18px;
     }
 
-    .features{
+    .feature-icon{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:#181818;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+    }
+
+    .feature-item span{
+      color:#e7e7e7;
+      font-weight:600;
+    }
+
+    .mini-grid{
       display:grid;
       grid-template-columns:1fr;
-      gap:15px;
+      gap:14px;
     }
 
-    .feature{
-      background:#101010;
-      border:1px solid #222;
-      border-radius:16px;
+    .mini-card{
+      background:#0d0d0d;
+      border:1px solid #1f1f1f;
       padding:20px;
+      border-radius:18px;
     }
 
-    .feature h3{
-      margin-top:0;
-      margin-bottom:10px;
-      font-size:20px;
+    .mini-card h3{
+      margin-bottom:8px;
+      font-size:18px;
     }
 
-    .feature p{
-      font-size:15px;
-      margin:0;
-      color:#999;
+    .mini-card p{
+      color:#969696;
+      font-size:14px;
+    }
+
+    .bottom-cta{
+      margin-top:110px;
+      text-align:center;
+      background:#111;
+      border:1px solid #222;
+      border-radius:30px;
+      padding:70px 30px;
+    }
+
+    .bottom-cta h2{
+      font-size:52px;
+      margin-bottom:18px;
+      line-height:1.1;
+    }
+
+    .bottom-cta p{
+      max-width:650px;
+      margin:auto;
+      color:#a0a0a0;
+      margin-bottom:35px;
+      font-size:18px;
     }
 
     footer{
       text-align:center;
-      padding:40px;
       color:#666;
-      border-top:1px solid #222;
+      padding:45px 20px;
       margin-top:80px;
+      border-top:1px solid #1c1c1c;
     }
 
-    @media(max-width:900px){
+    @media(max-width:980px){
+
+      h1{
+        font-size:48px;
+      }
 
       .content-grid{
         grid-template-columns:1fr;
       }
 
-      h1{
-        font-size:42px;
+      .stats-row{
+        grid-template-columns:1fr;
+      }
+
+      .bottom-cta h2{
+        font-size:38px;
       }
 
     }
 
   </style>
 </head>
-
 <body>
 
 <div class="container">
 
-  <h1>
-    Wir verwandeln eure Inhalte automatisch in Kunden-Content.
-  </h1>
+  <div class="badge">
+    <div class="badge-dot"></div>
+    AI Content Automation für moderne Brands
+  </div>
 
-  <p>
-    Aus einem Video erstellen wir LinkedIn-Posts,
-    Newsletter und Kurzvideos — komplett automatisiert.
-  </p>
+  <div class="hero-text">
 
-  <a href="mailto:alex.media.automations@proton.me?subject=Projektanfrage" class="button">
-    Projekt anfragen
-  </a>
+    <h1>
+      Wir verwandeln eure Inhalte automatisch in Kunden-Content.
+    </h1>
 
-  <div class="content-grid">
+    <p>
+      Aus einem einzigen Video erstellen wir LinkedIn-Posts,
+      Newsletter, Reels und viralen Shortform-Content — komplett automatisiert.
+    </p>
 
-    <div class="video-section">
+    <div class="hero-buttons">
+
+      <a href="mailto:alex.media.automations@proton.me?subject=Projektanfrage" class="button button-primary">
+        Projekt anfragen
+      </a>
+
+      <a href="#demo" class="button button-secondary">
+        Demo ansehen
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="stats-row">
+
+    <div class="stat">
+      <h3>1 → 20+</h3>
+      <p>Aus einem Video entstehen automatisch dutzende Content Pieces.</p>
+    </div>
+
+    <div class="stat">
+      <h3>10h+</h3>
+      <p>Wöchentliche Zeitersparnis durch automatisierte Content-Systeme.</p>
+    </div>
+
+    <div class="stat">
+      <h3>24/7</h3>
+      <p>Kontinuierliche Content-Produktion ohne manuellen Aufwand.</p>
+    </div>
+
+  </div>
+
+  <div class="content-grid" id="demo">
+
+    <div class="video-wrapper">
+
+      <div class="video-top">
+        <span>AMA • Demo Workflow</span>
+
+        <div class="video-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
 
       <video controls autoplay muted loop playsinline>
         <source src="Storyboard 1 (3) (1) (1).mp4" type="video/mp4">
@@ -167,37 +392,71 @@
 
       <h2>1 Video → 20+ Inhalte</h2>
 
-      <p>
-        Unsere KI erstellt automatisch:
+      <p class="card-subtext">
+        Unsere KI verarbeitet bestehende Inhalte automatisch zu performanten Marketing-Assets.
       </p>
 
-      <ul>
-        <li>LinkedIn Posts</li>
-        <li>Newsletter</li>
-        <li>TikToks & Reels</li>
-        <li>Shortform Content</li>
-      </ul>
+      <div class="feature-list">
 
-      <div class="features">
-
-        <div class="feature">
-          <h3>LinkedIn Automation</h3>
-          <p>Professioneller B2B Content automatisch erstellt.</p>
+        <div class="feature-item">
+          <div class="feature-icon">✦</div>
+          <span>LinkedIn Posts</span>
         </div>
 
-        <div class="feature">
-          <h3>Newsletter</h3>
+        <div class="feature-item">
+          <div class="feature-icon">✦</div>
+          <span>Newsletter</span>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">✦</div>
+          <span>TikToks & Reels</span>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">✦</div>
+          <span>Shortform Content</span>
+        </div>
+
+      </div>
+
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <h3>LinkedIn Automation</h3>
+          <p>Professioneller B2B Content automatisch generiert.</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Newsletter System</h3>
           <p>Automatische Newsletter aus bestehenden Videos.</p>
         </div>
 
-        <div class="feature">
-          <h3>Short Videos</h3>
-          <p>Aus langen Videos entstehen Reels & Shorts.</p>
+        <div class="mini-card">
+          <h3>Short Video Engine</h3>
+          <p>Reels & Shorts aus langen Formaten erstellt.</p>
         </div>
 
       </div>
 
     </div>
+
+  </div>
+
+  <div class="bottom-cta">
+
+    <h2>
+      Baut euch ein automatisiertes Content-System.
+    </h2>
+
+    <p>
+      Weniger manueller Aufwand. Mehr Reichweite. Mehr Content.
+      Alles aus euren bestehenden Videos.
+    </p>
+
+    <a href="mailto:alex.media.automations@proton.me?subject=Projektanfrage" class="button button-primary">
+      Jetzt kontaktieren
+    </a>
 
   </div>
 
@@ -209,3 +468,4 @@
 
 </body>
 </html>
+```
