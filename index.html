@@ -1046,36 +1046,64 @@ cards.forEach(card => {
 
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-    <!-- AI CHATBOT -->
+<!-- AI CHATBOT -->
 
-<div class="chatbot-button" id="chatbotToggle">
-  ✦
+<div class="chat-toggle" onclick="toggleChat()">
+  💬
 </div>
 
-<div class="chatbot-window" id="chatbotWindow">
+<div class="chatbot" id="chatbot">
 
-  <div class="chatbot-header">
+  <div class="chat-header">
     AMA Assistant
   </div>
 
-  <div class="chatbot-messages" id="chatMessages">
+  <div class="chat-messages" id="chatMessages">
 
     <div class="bot-message">
-      Hi 👋<br><br>
-      Ich beantworte Fragen zu unseren AI Content Systemen.
+      👋 Willkommen bei AMA.
+
+      <br><br>
+
+      Wähle einfach eine Frage aus:
+    </div>
+
+    <div class="quick-buttons">
+
+      <button onclick="sendQuick('Was macht AMA?')">
+        Was macht AMA?
+      </button>
+
+      <button onclick="sendQuick('Wie funktioniert das System?')">
+        Wie funktioniert es?
+      </button>
+
+      <button onclick="sendQuick('Welche Inhalte erstellt ihr?')">
+        Welche Inhalte?
+      </button>
+
+      <button onclick="sendQuick('Wie viel kostet das?')">
+        Preise
+      </button>
+
+      <button onclick="sendQuick('Wie starte ich?')">
+        Starten
+      </button>
+
     </div>
 
   </div>
 
-  <div class="chatbot-input-area">
+  <div class="chat-input">
 
     <input 
       type="text" 
-      id="chatInput"
+      id="chatInput" 
       placeholder="Frage stellen..."
+      onkeypress="handleKey(event)"
     >
 
-    <button id="sendBtn">
+    <button onclick="sendMessage()">
       Senden
     </button>
 
@@ -1085,49 +1113,48 @@ cards.forEach(card => {
 
 <style>
 
-.chatbot-button{
+.chat-toggle{
   position:fixed;
-  bottom:24px;
-  right:24px;
-  width:64px;
-  height:64px;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
   border-radius:50%;
   background:white;
   color:black;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:24px;
-  font-weight:700;
+  font-size:28px;
   cursor:pointer;
   z-index:9999;
   box-shadow:0 0 30px rgba(255,255,255,0.2);
 }
 
-.chatbot-window{
+.chatbot{
   position:fixed;
-  bottom:100px;
-  right:24px;
+  bottom:105px;
+  right:25px;
   width:360px;
-  max-width:calc(100vw - 40px);
-  height:520px;
   background:#111;
   border:1px solid #222;
   border-radius:24px;
+  overflow:hidden;
   display:none;
   flex-direction:column;
-  overflow:hidden;
   z-index:9999;
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
 }
 
-.chatbot-header{
-  padding:20px;
+.chat-header{
+  padding:18px;
+  background:#181818;
   border-bottom:1px solid #222;
   font-weight:700;
 }
 
-.chatbot-messages{
-  flex:1;
+.chat-messages{
+  height:420px;
   overflow-y:auto;
   padding:20px;
   display:flex;
@@ -1137,10 +1164,10 @@ cards.forEach(card => {
 
 .bot-message,
 .user-message{
-  padding:14px 16px;
+  padding:14px;
   border-radius:16px;
-  line-height:1.5;
   max-width:85%;
+  line-height:1.5;
 }
 
 .bot-message{
@@ -1151,272 +1178,190 @@ cards.forEach(card => {
 .user-message{
   background:white;
   color:black;
-  margin-left:auto;
+  align-self:flex-end;
 }
 
-.chatbot-input-area{
+.chat-input{
   display:flex;
-  gap:10px;
-  padding:18px;
   border-top:1px solid #222;
 }
 
-.chatbot-input-area input{
+.chat-input input{
   flex:1;
   background:#0d0d0d;
-  border:1px solid #222;
+  border:none;
   color:white;
-  padding:14px;
-  border-radius:14px;
+  padding:16px;
   outline:none;
 }
 
-.chatbot-input-area button{
+.chat-input button{
+  border:none;
   background:white;
   color:black;
-  border:none;
-  padding:0 18px;
-  border-radius:14px;
+  padding:0 20px;
   cursor:pointer;
   font-weight:700;
+}
+
+.quick-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.quick-buttons button{
+  background:#1b1b1b;
+  border:1px solid #2a2a2a;
+  color:white;
+  padding:10px 14px;
+  border-radius:14px;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.quick-buttons button:hover{
+  background:#252525;
+}
+
+@media(max-width:600px){
+
+  .chatbot{
+    width:92%;
+    right:4%;
+    bottom:95px;
+  }
+
 }
 
 </style>
 
 <script>
 
-const chatbotToggle = document.getElementById('chatbotToggle');
-const chatbotWindow = document.getElementById('chatbotWindow');
-const sendBtn = document.getElementById('sendBtn');
-const chatInput = document.getElementById('chatInput');
-const chatMessages = document.getElementById('chatMessages');
+function toggleChat(){
 
-chatbotToggle.onclick = () => {
+  const bot = document.getElementById('chatbot');
 
-  if(chatbotWindow.style.display === 'flex'){
-    chatbotWindow.style.display = 'none';
+  if(bot.style.display === 'flex'){
+    bot.style.display = 'none';
   } else {
-    chatbotWindow.style.display = 'flex';
+    bot.style.display = 'flex';
   }
 
-};
-
-function addMessage(text, type){
-
-  const div = document.createElement('div');
-
-  div.className = type === 'user'
-    ? 'user-message'
-    : 'bot-message';
-
-  div.innerHTML = text;
-
-  chatMessages.appendChild(div);
-
-  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function botReply(message){
+function handleKey(e){
+  if(e.key === 'Enter'){
+    sendMessage();
+  }
+}
 
-  const msg = message.toLowerCase();
+function sendQuick(text){
 
-  let reply = `
-    Willkommen bei AMA 👋<br><br>
+  document.getElementById('chatInput').value = text;
+  sendMessage();
 
-    Wir helfen Brands, Creatorn und Unternehmen dabei,
-    aus bestehenden Videos automatisch LinkedIn Posts,
-    Reels, Newsletter und weiteren Content zu erstellen.
-  `;
+}
 
-  /* PREISE */
+function sendMessage(){
+
+  const input = document.getElementById('chatInput');
+  const messages = document.getElementById('chatMessages');
+
+  const text = input.value.trim();
+
+  if(!text) return;
+
+  const userDiv = document.createElement('div');
+  userDiv.className = 'user-message';
+  userDiv.innerText = text;
+
+  messages.appendChild(userDiv);
+
+  let response = "";
+
+  const lower = text.toLowerCase();
 
   if(
-    msg.includes('preis') ||
-    msg.includes('kosten') ||
-    msg.includes('angebot') ||
-    msg.includes('paket') ||
-    msg.includes('pricing') ||
-    msg.includes('wie teuer')
+    lower.includes('was macht') ||
+    lower.includes('ama') ||
+    lower.includes('agentur')
   ){
 
-    reply = `
-      Die Kosten hängen davon ab,
-      wie umfangreich dein Content-System sein soll.<br><br>
+    response =
+    "AMA automatisiert Content-Produktion mit KI. Aus einem Video entstehen automatisch LinkedIn Posts, Reels, Newsletter und weiterer Shortform Content.";
 
-      Im kostenlosen Strategiegespräch analysieren wir,
-      welche Automationen für dich sinnvoll sind.
-      `;
   }
-
-  /* DAUER */
 
   else if(
-    msg.includes('wie lange') ||
-    msg.includes('dauer') ||
-    msg.includes('setup') ||
-    msg.includes('einrichtung') ||
-    msg.includes('starten')
+    lower.includes('wie funktioniert') ||
+    lower.includes('workflow') ||
+    lower.includes('system')
   ){
 
-    reply = `
-      Die Einrichtung dauert normalerweise nur wenige Tage.<br><br>
+    response =
+    "Du sendest ein Video oder bestehenden Content. Unser KI-System verarbeitet daraus automatisch Multi-Platform Content für Social Media und Marketing.";
 
-      Danach läuft die Content-Produktion größtenteils automatisiert.
-    `;
   }
-
-  /* CONTENT */
 
   else if(
-    msg.includes('content') ||
-    msg.includes('linkedin') ||
-    msg.includes('newsletter') ||
-    msg.includes('reels') ||
-    msg.includes('tiktok') ||
-    msg.includes('videos') ||
-    msg.includes('posts') ||
-    msg.includes('shorts')
+    lower.includes('welche inhalte') ||
+    lower.includes('content') ||
+    lower.includes('posts') ||
+    lower.includes('reels')
   ){
 
-    reply = `
-      Unser System erstellt automatisch:<br><br>
+    response =
+    "Wir erstellen automatisch LinkedIn Posts, TikToks, Reels, Newsletter, Hooks, Captions und Shortform Content.";
 
-      • LinkedIn Posts<br>
-      • Reels & TikToks<br>
-      • Newsletter<br>
-      • Shortform Content<br><br>
-
-      Alles aus bestehenden Videos oder Longform Content.
-    `;
   }
-
-  /* ZIELGRUPPE */
 
   else if(
-    msg.includes('für wen') ||
-    msg.includes('zielgruppe') ||
-    msg.includes('agentur') ||
-    msg.includes('creator') ||
-    msg.includes('coach') ||
-    msg.includes('unternehmen') ||
-    msg.includes('brand')
+    lower.includes('preis') ||
+    lower.includes('kosten')
   ){
 
-    reply = `
-      Unsere Systeme eignen sich besonders für:<br><br>
+    response =
+    "Die Preise hängen vom Umfang des Systems ab. Im kostenlosen Strategiegespräch analysieren wir deinen Content-Workflow und zeigen passende Lösungen.";
 
-      • Creator<br>
-      • Coaches<br>
-      • Agenturen<br>
-      • Personal Brands<br>
-      • Unternehmen mit regelmäßigem Content
-    `;
   }
-
-  /* AUTOMATISIERUNG */
 
   else if(
-    msg.includes('automatisierung') ||
-    msg.includes('ai') ||
-    msg.includes('ki') ||
-    msg.includes('workflow') ||
-    msg.includes('system')
+    lower.includes('start') ||
+    lower.includes('beginnen') ||
+    lower.includes('call') ||
+    lower.includes('beratung')
   ){
 
-    reply = `
-      AMA automatisiert den kompletten Workflow
-      von der Content-Aufbereitung bis zur Multi-Platform-Verwertung.<br><br>
+    response =
+    `Du kannst direkt hier starten:
+    
+https://calendly.com/alex-media-automations/kostenlose-demo`;
 
-      Dadurch entsteht deutlich mehr Output
-      bei weniger manueller Arbeit.
-    `;
   }
-
-  /* ZEITERSPARNIS */
-
-  else if(
-    msg.includes('zeit') ||
-    msg.includes('aufwand') ||
-    msg.includes('effizient')
-  ){
-
-    reply = `
-      Viele Kunden sparen jede Woche mehrere Stunden,
-      da Inhalte nicht mehr manuell umgewandelt werden müssen.
-    `;
-  }
-
-  /* KONTAKT */
-
-  else if(
-    msg.includes('kontakt') ||
-    msg.includes('call') ||
-    msg.includes('termin') ||
-    msg.includes('meeting') ||
-    msg.includes('gespräch') ||
-    msg.includes('buchen')
-  ){
-
-    reply = `
-      Hier kannst du direkt ein kostenloses Strategiegespräch buchen:<br><br>
-
-      <a 
-        href="https://calendly.com/alex-media-automations/kostenlose-demo"
-        target="_blank"
-        style="
-          color:white;
-          text-decoration:underline;
-        ">
-        Gespräch buchen
-      </a>
-    `;
-  }
-
-  /* STANDARD */
 
   else{
 
-    reply = `
-      Ich helfe dir gerne 👋<br><br>
+    response =
+    "AMA hilft Unternehmen, Creatorn und Agenturen dabei, Content vollständig mit KI zu automatisieren. Frage z.B. nach Preisen, Reels, LinkedIn oder dem Ablauf.";
 
-      Du kannst mich fragen zu:<br><br>
-
-      • Preisen<br>
-      • AI Automationen<br>
-      • LinkedIn Content<br>
-      • Reels & Shortform Content<br>
-      • Zeitersparnis<br>
-      • Strategiegesprächen
-    `;
   }
 
   setTimeout(() => {
-    addMessage(reply, 'bot');
+
+    const botDiv = document.createElement('div');
+    botDiv.className = 'bot-message';
+    botDiv.innerText = response;
+
+    messages.appendChild(botDiv);
+
+    messages.scrollTop = messages.scrollHeight;
+
   }, 500);
 
+  input.value = "";
+
 }
-
-sendBtn.onclick = () => {
-
-  const message = chatInput.value.trim();
-
-  if(message === '') return;
-
-  addMessage(message, 'user');
-
-  botReply(message);
-
-  chatInput.value = '';
-
-};
-
-chatInput.addEventListener('keypress', e => {
-
-  if(e.key === 'Enter'){
-    sendBtn.click();
-  }
-
-});
 
 </script>
     
