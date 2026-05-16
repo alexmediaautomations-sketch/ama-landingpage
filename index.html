@@ -143,40 +143,10 @@ form button {
 </head>
   ...
 </section>
-
-<script>
-const form = document.querySelector("form");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-
-  await fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  });
-
-  window.location.href = "/danke.html";
-});
-</script>
-
+  
 </body>
+  
 </html>
-  <section class="contact-section">
-  <h2>Jetzt kostenlos anfragen</h2>
-    
-<form name="kontakt" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="kontakt">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="E-Mail" required>
-  <textarea name="message" placeholder="Was brauchst du?" required></textarea>
-  <button type="submit">Anfrage senden</button>
-
-  </form>
-</section>
-
 <div class="container">
 
   <div class="hero">
