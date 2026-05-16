@@ -1221,66 +1221,144 @@ function botReply(message){
   const msg = message.toLowerCase();
 
   let reply = `
-    Gerne 👋<br><br>
-    Buche einfach ein kostenloses Strategiegespräch:
-    <br><br>
-    <a 
-      href="https://calendly.com/alex-media-automations/kostenlose-demo"
-      target="_blank"
-      style="
-        color:white;
-        text-decoration:underline;
-      ">
-      Gespräch buchen
-    </a>
+    Willkommen bei AMA 👋<br><br>
+
+    Wir helfen Brands, Creatorn und Unternehmen dabei,
+    aus bestehenden Videos automatisch LinkedIn Posts,
+    Reels, Newsletter und weiteren Content zu erstellen.
   `;
+
+  /* PREISE */
 
   if(
     msg.includes('preis') ||
     msg.includes('kosten') ||
-    msg.includes('angebot')
+    msg.includes('angebot') ||
+    msg.includes('paket') ||
+    msg.includes('pricing') ||
+    msg.includes('wie teuer')
   ){
+
     reply = `
-      Die Preise hängen vom Umfang des Systems ab.<br><br>
-      Im kostenlosen Erstgespräch schauen wir,
-      welches Setup für dich sinnvoll ist.
+      Die Kosten hängen davon ab,
+      wie umfangreich dein Content-System sein soll.<br><br>
+
+      Im kostenlosen Strategiegespräch analysieren wir,
+      welche Automationen für dich sinnvoll sind.
+      `;
+  }
+
+  /* DAUER */
+
+  else if(
+    msg.includes('wie lange') ||
+    msg.includes('dauer') ||
+    msg.includes('setup') ||
+    msg.includes('einrichtung') ||
+    msg.includes('starten')
+  ){
+
+    reply = `
+      Die Einrichtung dauert normalerweise nur wenige Tage.<br><br>
+
+      Danach läuft die Content-Produktion größtenteils automatisiert.
     `;
   }
 
-  else if(
-    msg.includes('dauer') ||
-    msg.includes('wie lange')
-  ){
-    reply = `
-      Die Einrichtung dauert normalerweise nur wenige Tage.
-    `;
-  }
+  /* CONTENT */
 
   else if(
     msg.includes('content') ||
-    msg.includes('videos') ||
+    msg.includes('linkedin') ||
+    msg.includes('newsletter') ||
     msg.includes('reels') ||
-    msg.includes('linkedin')
+    msg.includes('tiktok') ||
+    msg.includes('videos') ||
+    msg.includes('posts') ||
+    msg.includes('shorts')
   ){
+
     reply = `
-      Wir erstellen automatisch:<br><br>
+      Unser System erstellt automatisch:<br><br>
 
       • LinkedIn Posts<br>
       • Reels & TikToks<br>
       • Newsletter<br>
       • Shortform Content<br><br>
 
-      Alles aus bestehenden Videos oder Content.
+      Alles aus bestehenden Videos oder Longform Content.
     `;
   }
+
+  /* ZIELGRUPPE */
+
+  else if(
+    msg.includes('für wen') ||
+    msg.includes('zielgruppe') ||
+    msg.includes('agentur') ||
+    msg.includes('creator') ||
+    msg.includes('coach') ||
+    msg.includes('unternehmen') ||
+    msg.includes('brand')
+  ){
+
+    reply = `
+      Unsere Systeme eignen sich besonders für:<br><br>
+
+      • Creator<br>
+      • Coaches<br>
+      • Agenturen<br>
+      • Personal Brands<br>
+      • Unternehmen mit regelmäßigem Content
+    `;
+  }
+
+  /* AUTOMATISIERUNG */
+
+  else if(
+    msg.includes('automatisierung') ||
+    msg.includes('ai') ||
+    msg.includes('ki') ||
+    msg.includes('workflow') ||
+    msg.includes('system')
+  ){
+
+    reply = `
+      AMA automatisiert den kompletten Workflow
+      von der Content-Aufbereitung bis zur Multi-Platform-Verwertung.<br><br>
+
+      Dadurch entsteht deutlich mehr Output
+      bei weniger manueller Arbeit.
+    `;
+  }
+
+  /* ZEITERSPARNIS */
+
+  else if(
+    msg.includes('zeit') ||
+    msg.includes('aufwand') ||
+    msg.includes('effizient')
+  ){
+
+    reply = `
+      Viele Kunden sparen jede Woche mehrere Stunden,
+      da Inhalte nicht mehr manuell umgewandelt werden müssen.
+    `;
+  }
+
+  /* KONTAKT */
 
   else if(
     msg.includes('kontakt') ||
     msg.includes('call') ||
-    msg.includes('termin')
+    msg.includes('termin') ||
+    msg.includes('meeting') ||
+    msg.includes('gespräch') ||
+    msg.includes('buchen')
   ){
+
     reply = `
-      Hier kannst du direkt ein Gespräch buchen:<br><br>
+      Hier kannst du direkt ein kostenloses Strategiegespräch buchen:<br><br>
 
       <a 
         href="https://calendly.com/alex-media-automations/kostenlose-demo"
@@ -1289,19 +1367,26 @@ function botReply(message){
           color:white;
           text-decoration:underline;
         ">
-        Kostenloses Strategiegespräch
+        Gespräch buchen
       </a>
     `;
   }
 
-  else if(
-    msg.includes('ki') ||
-    msg.includes('ai') ||
-    msg.includes('automatisierung')
-  ){
+  /* STANDARD */
+
+  else{
+
     reply = `
-      Unsere AI Systeme automatisieren die komplette
-      Content-Aufbereitung für mehrere Plattformen gleichzeitig.
+      Ich helfe dir gerne 👋<br><br>
+
+      Du kannst mich fragen zu:<br><br>
+
+      • Preisen<br>
+      • AI Automationen<br>
+      • LinkedIn Content<br>
+      • Reels & Shortform Content<br>
+      • Zeitersparnis<br>
+      • Strategiegesprächen
     `;
   }
 
