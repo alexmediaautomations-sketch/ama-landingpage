@@ -54,12 +54,18 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:40px;
-      align-items:start;
+      align-items:stretch;
       margin-top:80px;
+    }
+
+    .video-section{
+      height:100%;
     }
 
     .video-section video{
       width:100%;
+      height:620px;
+      object-fit:cover;
       border-radius:24px;
       border:1px solid #222;
       display:block;
@@ -70,6 +76,8 @@
       padding:35px;
       border-radius:24px;
       border:1px solid #222;
+      min-height:620px;
+      box-sizing:border-box;
     }
 
     .card ul{
@@ -119,6 +127,14 @@
 
       .content-grid{
         grid-template-columns:1fr;
+      }
+
+      .video-section video{
+        height:auto;
+      }
+
+      .card{
+        min-height:auto;
       }
 
       h1{
