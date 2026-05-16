@@ -1218,24 +1218,91 @@ function addMessage(text, type){
 
 function botReply(message){
 
-  message = message.toLowerCase();
+  const msg = message.toLowerCase();
 
-  let reply = "Danke für deine Nachricht 👋";
+  let reply = `
+    Gerne 👋<br><br>
+    Buche einfach ein kostenloses Strategiegespräch:
+    <br><br>
+    <a 
+      href="https://calendly.com/alex-media-automations/kostenlose-demo"
+      target="_blank"
+      style="
+        color:white;
+        text-decoration:underline;
+      ">
+      Gespräch buchen
+    </a>
+  `;
 
-  if(message.includes('preis')){
-    reply = "Die Preise hängen vom Umfang des Systems ab. Buche einfach ein kostenloses Strategiegespräch.";
+  if(
+    msg.includes('preis') ||
+    msg.includes('kosten') ||
+    msg.includes('angebot')
+  ){
+    reply = `
+      Die Preise hängen vom Umfang des Systems ab.<br><br>
+      Im kostenlosen Erstgespräch schauen wir,
+      welches Setup für dich sinnvoll ist.
+    `;
   }
 
-  else if(message.includes('dauer')){
-    reply = "Die Einrichtung dauert normalerweise nur wenige Tage.";
+  else if(
+    msg.includes('dauer') ||
+    msg.includes('wie lange')
+  ){
+    reply = `
+      Die Einrichtung dauert normalerweise nur wenige Tage.
+    `;
   }
 
-  else if(message.includes('content')){
-    reply = "Wir erstellen automatisiert LinkedIn Posts, Reels, Newsletter und weiteren Multi-Platform Content.";
+  else if(
+    msg.includes('content') ||
+    msg.includes('videos') ||
+    msg.includes('reels') ||
+    msg.includes('linkedin')
+  ){
+    reply = `
+      Wir erstellen automatisch:<br><br>
+
+      • LinkedIn Posts<br>
+      • Reels & TikToks<br>
+      • Newsletter<br>
+      • Shortform Content<br><br>
+
+      Alles aus bestehenden Videos oder Content.
+    `;
   }
 
-  else if(message.includes('kontakt')){
-    reply = "Du kannst direkt über Calendly ein Gespräch buchen oder uns per E-Mail kontaktieren.";
+  else if(
+    msg.includes('kontakt') ||
+    msg.includes('call') ||
+    msg.includes('termin')
+  ){
+    reply = `
+      Hier kannst du direkt ein Gespräch buchen:<br><br>
+
+      <a 
+        href="https://calendly.com/alex-media-automations/kostenlose-demo"
+        target="_blank"
+        style="
+          color:white;
+          text-decoration:underline;
+        ">
+        Kostenloses Strategiegespräch
+      </a>
+    `;
+  }
+
+  else if(
+    msg.includes('ki') ||
+    msg.includes('ai') ||
+    msg.includes('automatisierung')
+  ){
+    reply = `
+      Unsere AI Systeme automatisieren die komplette
+      Content-Aufbereitung für mehrere Plattformen gleichzeitig.
+    `;
   }
 
   setTimeout(() => {
