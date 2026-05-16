@@ -174,7 +174,7 @@
 
     .button-primary:hover{
       transform:translateY(-3px);
-      box-shadow:0 0 30px rgba(255,255,255,0.25);
+      box-shadow:0 0 25px rgba(255,255,255,0.18);
     }
 
     .button-secondary{
@@ -369,25 +369,33 @@
       color:white;
     }
 
-    @media(max-width:980px){
+   @media(max-width:980px){
 
-      h1{
-        font-size:48px;
-      }
+  h1{
+    font-size:48px;
+  }
 
-      .content-grid{
-        grid-template-columns:1fr;
-      }
+  .content-grid{
+    grid-template-columns:1fr;
+  }
 
-      .stats-row{
-        grid-template-columns:1fr;
-      }
+  .stats-row{
+    grid-template-columns:1fr;
+  }
 
-      video{
-        height:auto;
-      }
+  video{
+    height:auto;
+  }
 
-    }
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .button{
+    width:100%;
+  }
+
+}
 
     @media(max-width:700px){
 
@@ -454,7 +462,7 @@
     </div>
 
     <div class="hero-trust">
-      Für Creator, Brands & moderne Unternehmen
+        Automatisierte Content-Systeme für Creator, Coaches, Agenturen & Brands
     </div>
 
   </div>
@@ -620,6 +628,32 @@
   </div>
 
 </section>
+<script>
 
+const cards = document.querySelectorAll('.stat, .card, .feature-item, .mini-card');
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0px)";
+    }
+
+  });
+
+});
+
+cards.forEach(card => {
+
+  card.style.opacity = "0";
+  card.style.transform = "translateY(40px)";
+  card.style.transition = "all 0.7s ease";
+
+  observer.observe(card);
+});
+
+</script>
 </body>
 </html>
