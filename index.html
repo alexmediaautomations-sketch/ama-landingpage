@@ -382,6 +382,77 @@
   line-height:1.7;
 }
 
+    .case-studies{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:90px;
+}
+
+.case-study{
+  background:#111;
+  border:1px solid #222;
+  border-radius:24px;
+  padding:34px;
+  transition:0.25s ease;
+}
+
+.case-study:hover{
+  transform:translateY(-4px);
+  border-color:#333;
+}
+
+.case-study-label{
+  color:#666;
+  font-size:13px;
+  margin-bottom:14px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.case-study h3{
+  font-size:28px;
+  margin-bottom:18px;
+  line-height:1.2;
+}
+
+.case-study p{
+  color:#9f9f9f;
+  margin-bottom:22px;
+}
+
+.case-study-stats{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.case-study-stat{
+  background:#0d0d0d;
+  border:1px solid #1f1f1f;
+  padding:14px 18px;
+  border-radius:16px;
+}
+
+.case-study-stat strong{
+  display:block;
+  font-size:20px;
+  margin-bottom:4px;
+}
+
+.case-study-stat span{
+  color:#777;
+  font-size:13px;
+}
+
+@media(max-width:980px){
+
+  .case-studies{
+    grid-template-columns:1fr;
+  }
+
+}
+    
     .fade-up{
   opacity:0;
   transform:translateY(40px);
@@ -643,7 +714,96 @@
     </div>
 
   </div>
+<!-- CASE STUDIES -->
 
+<section class="section">
+
+  <div class="section-header">
+    <h2>Case Studies</h2>
+
+    <p>
+      Beispiele moderner AI Content Systeme für Brands & Personal Brands.
+    </p>
+  </div>
+
+  <div class="case-studies">
+
+    <div class="case-study">
+
+      <div class="case-study-label">
+        Personal Brand
+      </div>
+
+      <h3>
+        Von 1 Video zu 30+ Content Assets pro Woche
+      </h3>
+
+      <p>
+        Ein bestehender Podcast wurde automatisch in LinkedIn Content,
+        Reels und Newsletter transformiert.
+      </p>
+
+      <div class="case-study-stats">
+
+        <div class="case-study-stat">
+          <strong>30+</strong>
+          <span>Content Pieces</span>
+        </div>
+
+        <div class="case-study-stat">
+          <strong>12h</strong>
+          <span>Zeitersparnis</span>
+        </div>
+
+        <div class="case-study-stat">
+          <strong>3x</strong>
+          <span>Mehr Output</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="case-study">
+
+      <div class="case-study-label">
+        Coaching Brand
+      </div>
+
+      <h3>
+        Täglicher Multi-Platform Content ohne manuelle Arbeit
+      </h3>
+
+      <p>
+        Lange Videos wurden automatisiert zu TikToks,
+        Instagram Reels und LinkedIn Posts verarbeitet.
+      </p>
+
+      <div class="case-study-stats">
+
+        <div class="case-study-stat">
+          <strong>24/7</strong>
+          <span>Automatisierung</span>
+        </div>
+
+        <div class="case-study-stat">
+          <strong>5x</strong>
+          <span>Mehr Reichweite</span>
+        </div>
+
+        <div class="case-study-stat">
+          <strong>0</strong>
+          <span>Manueller Aufwand</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+    
 <!-- TESTIMONIALS -->
 
     <section class="section">
@@ -856,7 +1016,7 @@
 <script>
 
 const cards = document.querySelectorAll(
-  '.stat, .card, .feature-item, .mini-card, .testimonial, .faq-item'
+  '.stat, .card, .feature-item, .mini-card, .testimonial, .faq-item, .case-study'
 );
 
 cards.forEach(card => {
