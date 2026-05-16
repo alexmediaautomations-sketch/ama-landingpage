@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>AMA • Alex Media Automations</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="AI Content Automation für Creator, Brands und Unternehmen. Aus einem Video entstehen automatisch LinkedIn Posts, Reels und Newsletter.">
+
+  <meta property="og:title" content="AMA • Alex Media Automations">
+  <meta property="og:description" content="Automatisierte Content-Systeme für moderne Brands.">
+  <meta property="og:image" content="thumbnail.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -40,7 +51,7 @@
       z-index:-1;
     }
 
-    body::after{ 
+    body::after{
       content:"";
       position:fixed;
       width:700px;
@@ -51,11 +62,47 @@
       pointer-events:none;
       z-index:-1;
     }
-    
+
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 32px;
+      backdrop-filter:blur(18px);
+      background:rgba(10,10,10,0.7);
+      border-bottom:1px solid #1f1f1f;
+      z-index:999;
+    }
+
+    .logo{
+      font-weight:800;
+      font-size:20px;
+      letter-spacing:-1px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+    }
+
+    .nav-links a{
+      color:#999;
+      text-decoration:none;
+      transition:0.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
     .container{
       max-width:1250px;
       margin:auto;
-      padding:100px 24px 70px;
+      padding:140px 24px 70px;
     }
 
     .badge{
@@ -154,7 +201,6 @@
       border:1px solid #222;
       padding:28px;
       border-radius:22px;
-      backdrop-filter:blur(10px);
       transition:all 0.25s ease;
     }
 
@@ -188,7 +234,6 @@
       overflow:hidden;
       box-shadow:0 0 60px rgba(255,255,255,0.03);
       transition:all 0.25s ease;
-      height:100%;
     }
 
     .video-wrapper:hover{
@@ -232,12 +277,6 @@
       padding:38px;
       height:100%;
       box-shadow:0 0 60px rgba(255,255,255,0.03);
-      transition:all 0.25s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-4px);
-      border-color:#333;
     }
 
     .card h2{
@@ -256,7 +295,6 @@
       display:flex;
       flex-direction:column;
       gap:16px;
-      margin-bottom:40px;
     }
 
     .feature-item{
@@ -267,12 +305,6 @@
       border:1px solid #1f1f1f;
       padding:18px;
       border-radius:18px;
-      transition:all 0.25s ease;
-    }
-
-    .feature-item:hover{
-      transform:translateY(-3px);
-      border-color:#333;
     }
 
     .feature-icon{
@@ -286,42 +318,8 @@
       font-size:18px;
     }
 
-    .feature-item span{
-      color:#e7e7e7;
-      font-weight:600;
-    }
-
-    .mini-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
-
-    .mini-card{
-      background:#0d0d0d;
-      border:1px solid #1f1f1f;
-      padding:22px;
-      border-radius:18px;
-      transition:all 0.25s ease;
-    }
-
-    .mini-card:hover{
-      transform:translateY(-4px);
-      border-color:#333;
-    }
-
-    .mini-card h3{
-      margin-bottom:8px;
-      font-size:18px;
-    }
-
-    .mini-card p{
-      color:#969696;
-      font-size:14px;
-    }
-
     .section{
-      margin-top:90px;
+      margin-top:120px;
     }
 
     .section-header{
@@ -334,11 +332,17 @@
       margin-bottom:18px;
     }
 
-    .section-header p{
-      max-width:700px;
+    .mini-card{
+      background:#0d0d0d;
+      border:1px solid #1f1f1f;
+      padding:32px;
+      border-radius:22px;
+      max-width:900px;
       margin:auto;
-      color:#9f9f9f;
-      font-size:18px;
+    }
+
+    .mini-card p{
+      color:#a0a0a0;
     }
 
     footer{
@@ -363,7 +367,6 @@
     .footer-links a{
       color:#777;
       text-decoration:none;
-      transition:0.2s ease;
     }
 
     .footer-links a:hover{
@@ -390,10 +393,41 @@
 
     }
 
+    @media(max-width:700px){
+
+      .navbar{
+        padding:16px 20px;
+      }
+
+      .nav-links{
+        gap:14px;
+        font-size:14px;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
+
+<nav class="navbar">
+
+  <div class="logo">
+    AMA
+  </div>
+
+  <div class="nav-links">
+    <a href="#demo">Demo</a>
+    <a href="#impressum">Impressum</a>
+    <a href="#datenschutz">Datenschutz</a>
+  </div>
+
+</nav>
 
 <div class="container">
 
@@ -505,6 +539,74 @@
 
   </div>
 
+  <section class="section" id="impressum">
+
+    <div class="section-header">
+      <h2>Impressum</h2>
+    </div>
+
+    <div class="mini-card">
+
+      <p style="margin-bottom:20px;">
+        Angaben gemäß § 5 TMG
+      </p>
+
+      <p>
+        AMA • Alex Media Automations
+      </p>
+
+      <br>
+
+      <p>
+        E-Mail: alex.media.automations@proton.me
+      </p>
+
+      <br>
+
+      <p>
+        Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+        Vlad Alexandru
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="datenschutz">
+
+    <div class="section-header">
+      <h2>Datenschutz</h2>
+    </div>
+
+    <div class="mini-card">
+
+      <p style="margin-bottom:20px;">
+        Der Schutz Ihrer Daten ist uns wichtig.
+      </p>
+
+      <p style="margin-bottom:18px;">
+        Beim Besuch dieser Website können technische Daten wie Browsertyp,
+        Betriebssystem oder Uhrzeit des Seitenaufrufs automatisch verarbeitet werden.
+      </p>
+
+      <p style="margin-bottom:18px;">
+        Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich
+        zur Bearbeitung Ihrer Anfrage verwendet.
+      </p>
+
+      <p style="margin-bottom:18px;">
+        Es erfolgt keine Weitergabe Ihrer Daten an Dritte.
+      </p>
+
+      <p>
+        Kontakt:
+        alex.media.automations@proton.me
+      </p>
+
+    </div>
+
+  </section>
+
 </div>
 
 <footer>
@@ -526,74 +628,6 @@
   </div>
 
 </footer>
-
-<section class="section" id="impressum">
-
-  <div class="section-header">
-    <h2>Impressum</h2>
-  </div>
-
-  <div class="mini-card" style="max-width:900px; margin:auto;">
-
-    <p style="margin-bottom:20px;">
-      Angaben gemäß § 5 TMG
-    </p>
-
-    <p>
-      AMA • Alex Media Automations<br>
-    </p>
-
-    <br>
-
-    <p>
-      E-Mail: alex.media.automations@proton.me
-    </p>
-
-    <br>
-
-    <p>
-      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-      Vlad Alexandru
-    </p>
-
-  </div>
-
-</section>
-
-<section class="section" id="datenschutz">
-
-  <div class="section-header">
-    <h2>Datenschutz</h2>
-  </div>
-
-  <div class="mini-card" style="max-width:900px; margin:auto 24px 120px;">
-
-    <p style="margin-bottom:20px;">
-      Der Schutz Ihrer Daten ist uns wichtig.
-    </p>
-
-    <p style="margin-bottom:18px;">
-      Beim Besuch dieser Website können technische Daten wie Browsertyp,
-      Betriebssystem oder Uhrzeit des Seitenaufrufs automatisch verarbeitet werden.
-    </p>
-
-    <p style="margin-bottom:18px;">
-      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich
-      zur Bearbeitung Ihrer Anfrage verwendet.
-    </p>
-
-    <p style="margin-bottom:18px;">
-      Es erfolgt keine Weitergabe Ihrer Daten an Dritte.
-    </p>
-
-    <p>
-      Kontakt:
-      alex.media.automations@proton.me
-    </p>
-
-  </div>
-
-</section>
 
 </body>
 </html>
