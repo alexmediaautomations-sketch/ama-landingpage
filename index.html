@@ -214,7 +214,7 @@
       display: grid;
       grid-template-columns: 1fr 1.15fr;
       gap: 16px;
-      align-items: start;
+      align-items: stretch;
       flex-grow: 1;
     }
 
@@ -233,7 +233,6 @@
       border-radius: 14px;
       cursor: pointer;
       transition: all 0.2s ease;
-      user-select: none;
     }
     .feature-item:hover { border-color: #444; background: #161616; transform: translateX(2px); }
     .feature-item.active { border-color: #666; background: #1c1c1c; }
@@ -268,7 +267,6 @@
       line-height: 1.2;
     }
 
-    /* FIX: Feste Höhe hinzugefügt, um Layout-Verschiebungen (Wackeln) zu verhindern */
     .preview-display-zone {
       background: #0d0d0d;
       border: 1px solid #1f1f1f;
@@ -277,7 +275,8 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 520px; 
+      height: 100%;
+      min-height: 440px;
       position: relative;
     }
     .preview-placeholder { text-align: center; margin: auto; }
@@ -297,7 +296,6 @@
       width: 100%;
       height: 100%;
       overflow-y: auto;
-      padding-right: 4px;
     }
     .preview-box::-webkit-scrollbar { width: 6px; }
     .preview-box::-webkit-scrollbar-track { background: transparent; }
@@ -323,11 +321,12 @@
     .mockup-video-canvas {
       position: relative; background: #101010; border-radius: 12px; height: 180px;
       margin-bottom: 12px; display: flex; align-items: center; justify-content: center;
-      border: 1px solid #1f1f1f; overflow: hidden;
+      border: 1px solid #1f1f1f; overflow: hidden; cursor: pointer;
     }
     .mockup-video-canvas video { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-    .mockup-video-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); z-index: 1; }
-    .mockup-video-play { position: relative; z-index: 2; width: 38px; height: 38px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; }
+    .mockup-video-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); z-index: 1; pointer-events: none; }
+    .mockup-video-play { position: relative; z-index: 2; width: 38px; height: 38px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; transition: background 0.2s; }
+    .mockup-video-canvas:hover .mockup-video-play { background: rgba(255,255,255,0.25); }
     .mockup-video-badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 6px; font-size: 10px; color: #fff; z-index: 2; font-weight: 600; }
 
     /* SEKTIONEN STYLE & ANIMATIONEN */
@@ -416,7 +415,6 @@
       .hero-buttons { flex-direction: column; } 
       .button { width: 100%; }
       .interactive-preview-container { grid-template-columns: 1fr; }
-      .preview-display-zone { height: 450px; }
     }
     @media(max-width: 700px) {
       .navbar { padding: 16px 20px; }
@@ -426,7 +424,7 @@
   </style>
 </head>
 
-<body>
+<body onmousemove="checkReset(event)">
 
 <nav class="navbar">
   <div class="logo">AMA</div>
@@ -483,12 +481,12 @@
 
     <div class="card fade-up glow" id="interactive-card">
       <h2>Ihr Expertenwissen → 20+ Inhalte</h2>
-      <p class="card-subtext">Klicken Sie auf ein Format, um die Vorschau rechts anzuzeigen und entspannt zu lesen:</p>
+      <p class="card-subtext">Bewegen Sie die Maus über ein Format, um die Vorschau rechts zu aktivieren:</p>
 
       <div class="interactive-preview-container">
         <div class="feature-list">
           
-          <div class="feature-item" onclick="activatePreview('linkedin', this)">
+          <div class="feature-item" onmouseenter="activatePreview('linkedin', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>LinkedIn Posts</span>
@@ -496,7 +494,7 @@
             </div>
           </div>
           
-          <div class="feature-item" onclick="activatePreview('newsletter', this)">
+          <div class="feature-item" onmouseenter="activatePreview('newsletter', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>Newsletter</span>
@@ -504,7 +502,7 @@
             </div>
           </div>
           
-          <div class="feature-item" onclick="activatePreview('reels', this)">
+          <div class="feature-item" onmouseenter="activatePreview('reels', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>TikToks & Reels</span>
@@ -512,7 +510,7 @@
             </div>
           </div>
           
-          <div class="feature-item" onclick="activatePreview('shortform', this)">
+          <div class="feature-item" onmouseenter="activatePreview('shortform', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>Shortform Content</span>
@@ -520,7 +518,7 @@
             </div>
           </div>
           
-          <div class="feature-item" onclick="activatePreview('carousel', this)">
+          <div class="feature-item" onmouseenter="activatePreview('carousel', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>Infografik-Karussells</span>
@@ -528,7 +526,7 @@
             </div>
           </div>
           
-          <div class="feature-item" onclick="activatePreview('blog', this)">
+          <div class="feature-item" onmouseenter="activatePreview('blog', this)">
             <div class="feature-icon-default">✦</div>
             <div class="feature-text-wrapper">
               <span>SEO Blogartikel</span>
@@ -538,10 +536,10 @@
         </div>
 
         <div class="preview-display-zone">
-          <div id="preview-placeholder-element" class="preview-placeholder" style="display: none;">
+          <div id="preview-placeholder-element" class="preview-placeholder">
             <div class="placeholder-glow">✦</div>
             <h4>Vorschau bereit</h4>
-            <p>Wähle ein Format aus, um die Assets anzuzeigen.</p>
+            <p>Fahre über ein Format, um die Assets anzuzeigen.</p>
           </div>
           
           <div id="linkedin-preview" class="preview-box">
@@ -571,7 +569,7 @@
                 <div class="mockup-meta"><div class="mockup-title">Short-Vertical Video</div><div class="mockup-subtitle">Reels & TikTok Produktion</div></div>
               </div>
             </div>
-            <div class="mockup-video-canvas">
+            <div class="mockup-video-canvas" onclick="toggleReelsVideo(this)">
               <div class="mockup-video-badge">0:15 Min</div>
               <video muted loop playsinline><source src="ipad-graph.mp4" type="video/mp4"></video>
               <div class="mockup-video-overlay"></div><div class="mockup-video-play">▶</div>
@@ -762,7 +760,7 @@
     
     document.querySelectorAll('.feature-item').forEach(item => item.classList.remove('active'));
     element.classList.add('active');
-    if(placeholder) placeholder.style.display = 'none';
+    placeholder.style.display = 'none';
 
     document.querySelectorAll('.preview-box').forEach(box => {
       box.classList.remove('active');
@@ -773,20 +771,57 @@
     const activeBox = document.getElementById(type + '-preview');
     if (activeBox) {
       activeBox.classList.add('active');
-      // Scrollt die Vorschau-Box automatisch nach oben beim Wechseln
-      activeBox.scrollTop = 0;
       const vid = activeBox.querySelector('video');
-      if(vid) { vid.currentTime = 0; vid.play().catch(() => {}); }
+      const playBtn = activeBox.querySelector('.mockup-video-play');
+      if(vid) { 
+        vid.currentTime = 0; 
+        // Versuchen, das Video abzuspielen (wird von manchen Browsern geblockt, falls kein Nutzer-Klick vorliegt)
+        vid.play().then(() => {
+          if (playBtn) playBtn.style.display = 'none';
+        }).catch(() => {
+          // Falls geblockt, lassen wir den Play-Button da, damit der Nutzer weiß, dass er klicken kann
+          if (playBtn) playBtn.style.display = 'flex';
+        }); 
+      }
     }
   }
 
-  // FIX: Aktiviert automatisch das erste Element beim Laden der Seite für stabilen Zustand
-  document.addEventListener('DOMContentLoaded', () => {
-    const firstFeature = document.querySelector('.feature-item');
-    if (firstFeature) {
-      activatePreview('linkedin', firstFeature);
+  // Interaktive Klick-Steuerung für das Reels-Vorschauvideo
+  function toggleReelsVideo(canvasElement) {
+    const video = canvasElement.querySelector('video');
+    const playBtn = canvasElement.querySelector('.mockup-video-play');
+    if (video) {
+      if (video.paused) {
+        video.play().then(() => {
+          if (playBtn) playBtn.style.display = 'none';
+        }).catch(err => console.log("Video-Wiedergabe verhindert:", err));
+      } else {
+        video.pause();
+        if (playBtn) playBtn.style.display = 'flex';
+      }
     }
-  });
+  }
+
+  function checkReset(event) {
+    if (!interactiveCard) return;
+    const rect = interactiveCard.getBoundingClientRect();
+    const x = event.clientX;
+    const y = event.clientY;
+
+    if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
+      document.querySelectorAll('.feature-item').forEach(item => item.classList.remove('active'));
+      document.querySelectorAll('.preview-box').forEach(box => {
+        box.classList.remove('active');
+        const v = box.querySelector('video');
+        if(v) v.pause();
+        // Play-Button wieder für den nächsten Aufruf einblenden
+        const pBtn = box.querySelector('.mockup-video-play');
+        if(pBtn) pBtn.style.display = 'flex';
+      });
+      if(placeholder) placeholder.style.display = 'flex';
+      currentActiveType = null;
+    }
+  }
 
   // --- SCROLL OBSERVER ---
   const observer = new IntersectionObserver(entries => {
