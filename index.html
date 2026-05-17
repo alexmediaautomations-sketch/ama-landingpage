@@ -7,25 +7,20 @@
 
   <title>AMA • Alex Media Automations</title>
 
-  <!-- SEO -->
-  <meta name="description" content="AI Content Automation für Creator, Brands und Unternehmen. Aus einem Video entstehen automatisch LinkedIn Posts, Reels und Newsletter.">
+  <meta name="description" content="AI Content Automation für Kanzleien und Unternehmen. Aus einer Sprachnachricht oder einem Video entstehen automatisch LinkedIn Posts, Reels und Newsletter.">
 
   <meta property="og:title" content="AMA • Alex Media Automations">
-  <meta property="og:description" content="Automatisierte Content-Systeme für moderne Brands.">
+  <meta property="og:description" content="Automatisierte Content-Systeme für moderne Kanzleien & Unternehmen.">
   <meta property="og:image" content="thumbnail.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -68,7 +63,6 @@
     }
 
     /* NAVBAR */
-
     .navbar{
       position:fixed;
       top:0;
@@ -132,21 +126,21 @@
     }
 
     h1{
-      font-size:72px;
-      line-height:1;
-      max-width:950px;
+      font-size:clamp(32px, 4.5vw, 58px);
+      line-height:1.15;
+      max-width:1100px;
       font-weight:800;
       letter-spacing:-2px;
       margin-bottom:28px;
     }
 
     .hero-text{
-      max-width:760px;
+      max-width:850px;
     }
 
     .hero-text p{
       color:#a7a7a7;
-      font-size:20px;
+      font-size:19px;
       margin-bottom:35px;
     }
 
@@ -352,134 +346,126 @@
     }
 
     .faq{
-  margin-top:90px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
+      margin-top:90px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
 
-.faq-item{
-  background:#111;
-  border:1px solid #222;
-  border-radius:22px;
-  padding:24px;
-  transition:0.25s ease;
-}
+    .faq-item{
+      background:#111;
+      border:1px solid #222;
+      border-radius:22px;
+      padding:24px;
+      transition:0.25s ease;
+    }
 
-.faq-item:hover{
-  border-color:#333;
-  transform:translateY(-3px);
-}
+    .faq-item:hover{
+      border-color:#333;
+      transform:translateY(-3px);
+    }
 
-.faq-item h3{
-  font-size:18px;
-  margin-bottom:12px;
-}
+    .faq-item h3{
+      font-size:18px;
+      margin-bottom:12px;
+    }
 
-.faq-item p{
-  color:#9f9f9f;
-  font-size:15px;
-  line-height:1.7;
-}
+    .faq-item p{
+      color:#9f9f9f;
+      font-size:15px;
+      line-height:1.7;
+    }
 
     .case-studies{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-  margin-top:90px;
-}
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+      margin-top:90px;
+    }
 
-.case-study{
-  background:#111;
-  border:1px solid #222;
-  border-radius:24px;
-  padding:34px;
-  transition:0.25s ease;
-}
+    .case-study{
+      background:#111;
+      border:1px solid #222;
+      border-radius:24px;
+      padding:34px;
+      transition:0.25s ease;
+    }
 
-.case-study:hover{
-  transform:translateY(-4px);
-  border-color:#333;
-}
+    .case-study:hover{
+      transform:translateY(-4px);
+      border-color:#333;
+    }
 
-.case-study-label{
-  color:#666;
-  font-size:13px;
-  margin-bottom:14px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
+    .case-study-label{
+      color:#666;
+      font-size:13px;
+      margin-bottom:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
 
-.case-study h3{
-  font-size:28px;
-  margin-bottom:18px;
-  line-height:1.2;
-}
+    .case-study h3{
+      font-size:28px;
+      margin-bottom:18px;
+      line-height:1.2;
+    }
 
-.case-study p{
-  color:#9f9f9f;
-  margin-bottom:22px;
-}
+    .case-study p{
+      color:#9f9f9f;
+      margin-bottom:22px;
+    }
 
-.case-study-stats{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
+    .case-study-stats{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
 
-.case-study-stat{
-  background:#0d0d0d;
-  border:1px solid #1f1f1f;
-  padding:14px 18px;
-  border-radius:16px;
-}
+    .case-study-stat{
+      background:#0d0d0d;
+      border:1px solid #1f1f1f;
+      padding:14px 18px;
+      border-radius:16px;
+    }
 
-.case-study-stat strong{
-  display:block;
-  font-size:20px;
-  margin-bottom:4px;
-}
+    .case-study-stat strong{
+      display:block;
+      font-size:20px;
+      margin-bottom:4px;
+    }
 
-.case-study-stat span{
-  color:#777;
-  font-size:13px;
-}
-
-@media(max-width:980px){
-
-  .case-studies{
-    grid-template-columns:1fr;
-  }
-
-}
+    .case-study-stat span{
+      color:#777;
+      font-size:13px;
+    }
     
     .fade-up{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 0.8s ease;
+    }
 
-.fade-up.show{
-  opacity:1;
-  transform:translateY(0);
-}
+    .fade-up.show{
+      opacity:1;
+      transform:translateY(0);
+    }
 
-.glow{
-  position:relative;
-}
+    .glow{
+      position:relative;
+    }
 
-.glow::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  background:linear-gradient(
-    135deg,
-    rgba(255,255,255,0.06),
-    transparent
-  );
-  pointer-events:none;
-}
+    .glow::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background:linear-gradient(
+        135deg,
+        rgba(255,255,255,0.06),
+        transparent
+      );
+      pointer-events:none;
+    }
     
     .section{
       margin-top:100px;
@@ -535,115 +521,107 @@
       color:white;
     }
 
-  @media(max-width:980px){
+    @media(max-width:980px){
+      h1{
+        font-size:38px;
+      }
 
-  h1{
-    font-size:48px;
-  }
+      .content-grid{
+        grid-template-columns:1fr;
+      }
 
-  .content-grid{
-    grid-template-columns:1fr;
-  }
+      .stats-row{
+        grid-template-columns:1fr;
+      }
 
-  .stats-row{
-    grid-template-columns:1fr;
-  }
+      .testimonials{
+        grid-template-columns:1fr;
+      }
 
-  .testimonials{
-    grid-template-columns:1fr;
-  }
+      .case-studies{
+        grid-template-columns:1fr;
+      }
 
-  video{
-    height:auto;
-  }
+      video{
+        height:auto;
+      }
 
-  .hero-buttons{
-    flex-direction:column;
-  }
+      .hero-buttons{
+        flex-direction:column;
+      }
 
-  .button{
-    width:100%;
-  }
+      .button{
+        width:100%;
+      }
+    }
 
-}
+    @media(max-width:700px){
+      .navbar{
+        padding:16px 20px;
+      }
 
-@media(max-width:700px){
-
-  .navbar{
-    padding:16px 20px;
-  }
-
-  .nav-links{
-    gap:14px;
-    font-size:14px;
-  }
-
-}
+      .nav-links{
+        gap:14px;
+        font-size:14px;
+      }
+    }
   </style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav class="navbar">
-
   <div class="logo">
     AMA
   </div>
-
   <div class="nav-links">
     <a href="#demo">Demo</a>
     <a href="#impressum">Impressum</a>
     <a href="#datenschutz">Datenschutz</a>
   </div>
-
 </nav>
 
 <div class="container">
 
   <div class="badge">
     <div class="badge-dot"></div>
-    AI Content Automation für moderne Brands
+    AI Content Automation für Kanzleien & Unternehmen
   </div>
 
   <div class="hero-text">
-
     <h1>
-Maximale Sichtbarkeit auf Social Media für Kanzleien & Unternehmen – ohne eigenen Zeitaufwand.    </h1>
+      Maximale Social-Media-Sichtbarkeit für Kanzleien & Unternehmen – ohne eigenen Zeitaufwand.
+    </h1>
 
     <p>
-      
-      Senden Sie uns einfach eine kurze Sprachnachricht oder ein Video. Unsere KI-Systeme verwandeln Ihr Fachwissen vollautomatisch in dutzende Premium-Inhalte für LinkedIn, Instagram & Co.    </p>
+      Senden Sie uns einfach eine kurze Sprachnachricht oder ein Video. Unsere KI-Systeme verwandeln Ihr Fachwissen vollautomatisch in dutzende Premium-Inhalte für LinkedIn, Instagram & Co.
+    </p>
 
     <div class="hero-buttons">
-
       <a href="https://calendly.com/alex-media-automations/kostenlose-demo" 
         target="_blank" 
         class="button button-primary">
-       Kostenlose AI Workflow Analyse
+        Kostenlose AI Workflow Analyse
       </a>
-
       <a href="#demo" class="button button-secondary">
         Demo ansehen
       </a>
-    
     </div>
 
-    <div class="hero-trust">
+    <div class="hero-trust" style="margin-top: 30px;">
       Kostenloses Erstgespräch • 15 Minuten • Keine Verpflichtung
     </div>
 
     <div class="hero-trust">
       Automatisierte Content-Systeme für Kanzleien, Unternehmen & Brands
     </div>
+  </div>
 
   <div class="stats-row">
-
     <div class="stat">
       <h3>1 → 20+</h3>
-      <p>Aus einer Sprachnachricht/Video entstehen vollautomatisch dutzende Inhalte für LinkedIn, Instagram & Co.</p>
+      <p>Aus einer Sprachnachricht oder einem Video entstehen vollautomatisch dutzende Inhalte für LinkedIn, Instagram & Co.</p>
     </div>
 
     <div class="stat">
@@ -655,228 +633,166 @@ Maximale Sichtbarkeit auf Social Media für Kanzleien & Unternehmen – ohne eig
       <h3>24/7</h3>
       <p>Kontinuierliche Omnipräsenz, die im Hintergrund rund um die Uhr qualifizierte Fachkräfte & Wunschkunden anzieht.</p>
     </div>
-
   </div>
 
   <div class="content-grid" id="demo">
-
     <div class="video-wrapper">
-
       <div class="video-top">
         <span>AMA • AI Workflow Demo</span>
-
         <div class="video-dots">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-
       <video controls autoplay muted loop playsinline poster="thumbnail.jpg">
         <source src="Storyboard 1 (3) (1) (1).mp4" type="video/mp4">
       </video>
-
     </div>
 
     <div class="card">
-
-      <h2>1 Video → 20+ Inhalte</h2>
-
+      <h2>Ihr Expertenwissen → 20+ Inhalte</h2>
       <p class="card-subtext">
-        Unsere KI verarbeitet Ihr vorhandenes Fachwissen (z. B. aus einer kurzen Notiz oder einem Video) vollautomatisch zu performanten Beiträgen, Reels und Kurzvideos.
+        Unsere KI verarbeitet Ihr vorhandenes Fachwissen (z. B. aus einer kurzen Sprachnachricht, Notiz oder einem Video) vollautomatisch zu performanten Beiträgen, Reels und Kurzvideos.
       </p>
 
       <div class="feature-list">
-
         <div class="feature-item">
           <div class="feature-icon">✦</div>
           <span>LinkedIn Posts</span>
         </div>
-
         <div class="feature-item">
           <div class="feature-icon">✦</div>
           <span>Newsletter</span>
         </div>
-
         <div class="feature-item">
           <div class="feature-icon">✦</div>
           <span>TikToks & Reels</span>
         </div>
-
         <div class="feature-item">
           <div class="feature-icon">✦</div>
           <span>Shortform Content</span>
         </div>
-
       </div>
-
     </div>
-
   </div>
-<!-- CASE STUDIES -->
 
 <section class="section">
-
   <div class="section-header">
     <h2>Case Studies</h2>
-
     <p>
-      Beispiele moderner AI Content Systeme für Brands & Personal Brands.
+      Beispiele moderner AI Content Systeme für Kanzleien & Unternehmen.
     </p>
   </div>
 
   <div class="case-studies">
-
     <div class="case-study">
-
       <div class="case-study-label">
         Mitarbeiter-Gewinnung & Recruiting
       </div>
-
       <h3>
-        Von 1 Video zu 30+ Content Assets pro Woche
+        Von einer Sprachnachricht zu 30+ Content Assets pro Woche
       </h3>
-
       <p>
-        Ein bestehender Podcast wurde automatisch in LinkedIn Content,
-        Reels und Newsletter transformiert.
+        Kurze Kanzlei-Inputs wurden vollautomatisch in LinkedIn Content, Fachvideos und Newsletter transformiert.
       </p>
-
       <div class="case-study-stats">
-
         <div class="case-study-stat">
           <strong>30+</strong>
           <span>Content Pieces</span>
         </div>
-
         <div class="case-study-stat">
           <strong>12h</strong>
           <span>Zeitersparnis</span>
         </div>
-
         <div class="case-study-stat">
           <strong>3x</strong>
           <span>Mehr Output</span>
         </div>
-
       </div>
-
     </div>
 
     <div class="case-study">
-
       <div class="case-study-label">
         Kanzlei- & Unternehmenswachstum
       </div>
-
       <h3>
         Täglicher Multi-Platform Content ohne manuelle Arbeit
       </h3>
-
       <p>
-        Lange Videos wurden automatisiert zu TikToks,
-        Instagram Reels und LinkedIn Posts verarbeitet.
+        Vorhandenes Fachwissen wurde vollautomatisch zu TikToks, Instagram Reels und LinkedIn Posts verarbeitet.
       </p>
-
       <div class="case-study-stats">
-
         <div class="case-study-stat">
           <strong>24/7</strong>
           <span>Automatisierung</span>
         </div>
-
         <div class="case-study-stat">
           <strong>5x</strong>
           <span>Mehr Reichweite</span>
         </div>
-
         <div class="case-study-stat">
           <strong>0</strong>
           <span>Manueller Aufwand</span>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
     
-<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-header">
+    <h2>Was Partner sagen</h2>
+    <p>
+      Moderne Content-Systeme für mehr Reichweite, mehr Sichtbarkeit und weniger manuellen Aufwand.
+    </p>
+  </div>
 
-    <section class="section">
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>
+        „Wir sparen jede Woche mehrere Stunden Content-Arbeit. Die Ergebnisse spiegeln unsere Kanzlei extrem professionell wider.“
+      </p>
+      <h4>Maximilian R.</h4>
+      <span>Kanzleiinhaber</span>
+    </div>
 
-      <div class="section-header">
-        <h2>Was Kunden sagen</h2>
+    <div class="testimonial">
+      <p>
+        „Aus einer einzigen Sprachnachricht entstehen plötzlich Reels, LinkedIn Posts und Newsletter automatisch.“
+      </p>
+      <h4>Sarah K.</h4>
+      <span>Geschäftsführerin</span>
+    </div>
 
-        <p>
-          Moderne Content-Systeme für mehr Reichweite,
-          mehr Sichtbarkeit und weniger manuellen Aufwand.
-        </p>
-      </div>
-
-      <div class="testimonials">
-    
-        <div class="testimonial">
-          <p>
-            „Wir sparen jede Woche mehrere Stunden Content-Arbeit.
-            Die Ergebnisse sehen extrem professionell aus.“
-          </p>
-
-          <h4>Maximilian R.</h4>
-          <span>Founder • Personal Brand</span>
-        </div>
-
-        <div class="testimonial">
-          <p>
-            „Aus einem einzigen Video entstehen plötzlich Reels,
-            LinkedIn Posts und Newsletter automatisch.“
-          </p>
-
-          <h4>Sarah K.</h4>
-          <span>Marketing Consultant</span>
-        </div>
-
-        <div class="testimonial">
-          <p>
-            „Das System wirkt wie ein komplettes internes Content-Team.“
-          </p>
-
-          <h4>Daniel F.</h4>
-          <span>Agency Owner</span>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- FAQ -->
+    <div class="testimonial">
+      <p>
+        „Das System wirkt im Kanzlei-Alltag wie ein komplettes internes Content- und Marketing-Team.“
+      </p>
+      <h4>Daniel F.</h4>
+      <span>Partner einer Kanzlei</span>
+    </div>
+  </div>
+</section>
 
 <section class="section">
-
   <div class="section-header">
     <h2>Häufige Fragen</h2>
-
     <p>
       Antworten auf die wichtigsten Fragen rund um unser AI Content System.
     </p>
   </div>
 
   <div class="faq">
-
     <div class="faq-item">
       <h3>Wie funktioniert das System?</h3>
-
       <p>
-        Wir nehmen bestehende Videos oder Inhalte und verwandeln sie automatisch
-        in LinkedIn Posts, Reels, Newsletter und weiteren Content.
+        Wir nehmen kurze Sprachnachrichten oder Videos von Ihnen auf und verwandeln sie vollautomatisch in verkaufsstarke LinkedIn Posts, Reels, Newsletter und weiteren Content.
       </p>
     </div>
 
     <div class="faq-item">
       <h3>Für wen ist das geeignet?</h3>
-
       <p>
         Für fortschrittliche Kanzleiinhaber, Steuerberater und Geschäftsführer, die digital sichtbar werden wollen, um dem Fachkräftemangel zu entkommen – aber im Alltag absolut keine Zeit dafür haben.
       </p>
@@ -884,7 +800,6 @@ Maximale Sichtbarkeit auf Social Media für Kanzleien & Unternehmen – ohne eig
 
     <div class="faq-item">
       <h3>Wie schnell kann gestartet werden?</h3>
-
       <p>
         In der Regel innerhalb weniger Tage nach dem Erstgespräch.
       </p>
@@ -892,127 +807,79 @@ Maximale Sichtbarkeit auf Social Media für Kanzleien & Unternehmen – ohne eig
 
     <div class="faq-item">
       <h3>Benötige ich technisches Wissen?</h3>
-
       <p>
         Nein. Wir übernehmen die komplette Einrichtung und Automatisierung.
       </p>
     </div>
-
   </div>
-
 </section>
 
-    <!-- CALENDLY -->
-
 <section class="section">
-
   <div class="section-header">
     <h2>Kostenloses Strategiegespräch</h2>
-
     <p>
       Buche direkt ein unverbindliches Erstgespräch.
     </p>
   </div>
 
   <div class="mini-card" style="padding:0; overflow:hidden;">
-
     <div 
       class="calendly-inline-widget" 
       data-url="https://calendly.com/alex-media-automations/kostenlose-demo"
       style="min-width:320px;height:700px;">
     </div>
-
   </div>
-
 </section>
     
-    <footer>
-
+<footer>
   <div>
     © 2026 AMA • Alex Media Automations
   </div>
-
   <div>
     AI Content Automation aus Deutschland
   </div>
-
   <div class="footer-links">
     <a href="#impressum">Impressum</a>
     <a href="#datenschutz">Datenschutz</a>
     <a href="mailto:alex.media.automations@proton.me">Kontakt</a>
   </div>
-
 </footer>
 
 <section class="section" id="impressum">
-
   <div class="section-header">
     <h2>Impressum</h2>
   </div>
-
   <div class="mini-card">
-
-    <p style="margin-bottom:20px;">
-      Angaben gemäß § 5 TMG
-    </p>
-
-    <p>
-      AMA • Alex Media Automations
-    </p>
-
+    <p style="margin-bottom:20px;">Angaben gemäß § 5 TMG</p>
+    <p>AMA • Alex Media Automations</p>
     <br>
-
-    <p>
-      E-Mail: alex.media.automations@proton.me
-    </p>
-
+    <p>E-Mail: alex.media.automations@proton.me</p>
     <br>
-
     <p>
       Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
       Vlad Alexandru
     </p>
-
   </div>
-
 </section>
 
 <section class="section" id="datenschutz">
-
   <div class="section-header">
     <h2>Datenschutz</h2>
   </div>
-
   <div class="mini-card" style="margin-bottom:120px;">
-
-    <p style="margin-bottom:20px;">
-      Der Schutz Ihrer Daten ist uns wichtig.
-    </p>
-
+    <p style="margin-bottom:20px;">Der Schutz Ihrer Daten ist uns wichtig.</p>
     <p style="margin-bottom:18px;">
-      Beim Besuch dieser Website können technische Daten wie Browsertyp,
-      Betriebssystem oder Uhrzeit des Seitenaufrufs automatisch verarbeitet werden.
+      Beim Besuch dieser Website können technische Daten wie Browsertyp, Betriebssystem oder Uhrzeit des Seitenaufrufs automatisch verarbeitet werden.
     </p>
-
     <p style="margin-bottom:18px;">
-      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich
-      zur Bearbeitung Ihrer Anfrage verwendet.
+      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
     </p>
-
-    <p style="margin-bottom:18px;">
-      Es erfolgt keine Weitergabe Ihrer Daten an Dritte.
-    </p>
-
-    <p>
-      Kontakt: alex.media.automations@proton.me
-    </p>
-
+    <p style="margin-bottom:18px;">Es erfolgt keine Weitergabe Ihrer Daten an Dritte.</p>
+    <p>Kontakt: alex.media.automations@proton.me</p>
   </div>
-
 </section>
 
 <script>
-
 const cards = document.querySelectorAll(
   '.stat, .card, .feature-item, .mini-card, .testimonial, .faq-item, .case-study'
 );
@@ -1023,15 +890,11 @@ cards.forEach(card => {
 });
 
 const observer = new IntersectionObserver(entries => {
-
   entries.forEach(entry => {
-
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
-
   });
-
 },{
   threshold:0.15
 });
@@ -1039,78 +902,34 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => {
   observer.observe(card);
 });
-
 </script>
 
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-<!-- AI CHATBOT -->
-
-<div class="chat-toggle" onclick="toggleChat()">
-  💬
-</div>
+<div class="chat-toggle" onclick="toggleChat()">💬</div>
 
 <div class="chatbot" id="chatbot">
-
-  <div class="chat-header">
-    AMA Assistant
-  </div>
-
+  <div class="chat-header">AMA Assistant</div>
   <div class="chat-messages" id="chatMessages">
-
     <div class="bot-message">
-      👋 Willkommen bei AMA.
-
-      <br><br>
-
-      Wähle einfach eine Frage aus:
+      👋 Willkommen bei AMA.<br><br>Wähle einfach eine Frage aus:
     </div>
-
     <div class="quick-buttons">
-
-      <button onclick="sendQuick('Was macht AMA?')">
-        Was macht AMA?
-      </button>
-
-      <button onclick="sendQuick('Wie funktioniert das System?')">
-        Wie funktioniert es?
-      </button>
-
-      <button onclick="sendQuick('Welche Inhalte erstellt ihr?')">
-        Welche Inhalte?
-      </button>
-
-      <button onclick="sendQuick('Wie viel kostet das?')">
-        Preise
-      </button>
-
-      <button onclick="sendQuick('Wie starte ich?')">
-        Starten
-      </button>
-
+      <button onclick="sendQuick('Was macht AMA?')">Was macht AMA?</button>
+      <button onclick="sendQuick('Wie funktioniert das System?')">Wie funktioniert es?</button>
+      <button onclick="sendQuick('Welche Inhalte erstellt ihr?')">Welche Inhalte?</button>
+      <button onclick="sendQuick('Wie viel kostet das?')">Preise</button>
+      <button onclick="sendQuick('Wie starte ich?')">Starten</button>
     </div>
-
   </div>
 
   <div class="chat-input">
-
-    <input 
-      type="text" 
-      id="chatInput" 
-      placeholder="Frage stellen..."
-      onkeypress="handleKey(event)"
-    >
-
-    <button onclick="sendMessage()">
-      Senden
-    </button>
-
+    <input type="text" id="chatInput" placeholder="Frage stellen..." onkeypress="handleKey(event)">
+    <button onclick="sendMessage()">Senden</button>
   </div>
-
 </div>
 
 <style>
-
 .chat-toggle{
   position:fixed;
   bottom:25px;
@@ -1223,29 +1042,22 @@ cards.forEach(card => {
 }
 
 @media(max-width:600px){
-
   .chatbot{
     width:92%;
     right:4%;
     bottom:95px;
   }
-
 }
-
 </style>
 
 <script>
-
 function toggleChat(){
-
   const bot = document.getElementById('chatbot');
-
   if(bot.style.display === 'flex'){
     bot.style.display = 'none';
   } else {
     bot.style.display = 'flex';
   }
-
 }
 
 function handleKey(e){
@@ -1255,17 +1067,13 @@ function handleKey(e){
 }
 
 function sendQuick(text){
-
   document.getElementById('chatInput').value = text;
   sendMessage();
-
 }
 
 function sendMessage(){
-
   const input = document.getElementById('chatInput');
   const messages = document.getElementById('chatMessages');
-
   const text = input.value.trim();
 
   if(!text) return;
@@ -1273,94 +1081,40 @@ function sendMessage(){
   const userDiv = document.createElement('div');
   userDiv.className = 'user-message';
   userDiv.innerText = text;
-
   messages.appendChild(userDiv);
 
   let response = "";
-
   const lower = text.toLowerCase();
 
-  if(
-    lower.includes('was macht') ||
-    lower.includes('ama') ||
-    lower.includes('agentur')
-  ){
-
-    response =
-    "AMA automatisiert Content-Produktion mit KI. Aus einem Video entstehen automatisch LinkedIn Posts, Reels, Newsletter und weiterer Shortform Content.";
-
+  if(lower.includes('was macht') || lower.includes('ama') || lower.includes('agentur')){
+    response = "AMA automatisiert Content-Produktion mit KI für Kanzleien und Unternehmen. Aus einer kurzen Sprachnachricht oder einem Video entstehen vollautomatisch LinkedIn Posts, Reels, Newsletter und Shortform Content.";
   }
-
-  else if(
-    lower.includes('wie funktioniert') ||
-    lower.includes('workflow') ||
-    lower.includes('system')
-  ){
-
-    response =
-    "Du sendest ein Video oder bestehenden Content. Unser KI-System verarbeitet daraus automatisch Multi-Platform Content für Social Media und Marketing.";
-
+  else if(lower.includes('wie funktioniert') || lower.includes('workflow') || lower.includes('system')){
+    response = "Sie senden uns einfach einen kurzen Input per Sprachnachricht oder ein Video. Unser KI-System verarbeitet daraus vollautomatisch verkaufsstarken Content für alle wichtigen Social-Media-Plattformen.";
   }
-
-  else if(
-    lower.includes('welche inhalte') ||
-    lower.includes('content') ||
-    lower.includes('posts') ||
-    lower.includes('reels')
-  ){
-
-    response =
-    "Wir erstellen automatisch LinkedIn Posts, TikToks, Reels, Newsletter, Hooks, Captions und Shortform Content.";
-
+  else if(lower.includes('welche inhalte') || lower.includes('content') || lower.includes('posts') || lower.includes('reels')){
+    response = "Wir erstellen vollautomatisch LinkedIn Posts, Kurzvideos (Reels/TikToks), Newsletter, Hooks und Captions aus Ihrem Fachwissen.";
   }
-
-  else if(
-    lower.includes('preis') ||
-    lower.includes('kosten')
-  ){
-
-    response =
-    "Die Preise hängen vom Umfang des Systems ab. Im kostenlosen Strategiegespräch analysieren wir deinen Content-Workflow und zeigen passende Lösungen.";
-
+  else if(lower.includes('preis') || lower.includes('kosten')){
+    response = "Die Investition hängt vom gewünschten Umfang und der Anzahl der Kanäle ab. Im kostenlosen Erstgespräch analysieren wir Ihren Workflow und erstellen ein maßgeschneidertes Angebot.";
   }
-
-  else if(
-    lower.includes('start') ||
-    lower.includes('beginnen') ||
-    lower.includes('call') ||
-    lower.includes('beratung')
-  ){
-
-    response =
-    `Du kannst direkt hier starten:
-    
-https://calendly.com/alex-media-automations/kostenlose-demo`;
-
+  else if(lower.includes('start') || lower.includes('beginnen') || lower.includes('call') || lower.includes('beratung')){
+    response = `Sichern Sie sich hier direkt Ihren Wunschtermin für die kostenlose Analyse: \n\nhttps://calendly.com/alex-media-automations/kostenlose-demo`;
   }
-
   else{
-
-    response =
-    "AMA hilft Unternehmen, Creatorn und Agenturen dabei, Content vollständig mit KI zu automatisieren. Frage z.B. nach Preisen, Reels, LinkedIn oder dem Ablauf.";
-
+    response = "AMA hilft Kanzleien und Unternehmen dabei, ihr Fachwissen ohne eigenen Zeitaufwand in Premium-Content zu verwandeln. Fragen Sie mich gerne nach dem Ablauf, den Preisen oder Inhalten!";
   }
 
   setTimeout(() => {
-
     const botDiv = document.createElement('div');
     botDiv.className = 'bot-message';
     botDiv.innerText = response;
-
     messages.appendChild(botDiv);
-
     messages.scrollTop = messages.scrollHeight;
-
   }, 500);
 
   input.value = "";
-
 }
-
 </script>
     
 </body>
